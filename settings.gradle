@@ -1,0 +1,2 @@
+include ':app'
+//project(":treeview").projectDir = new File("library/treeview")
