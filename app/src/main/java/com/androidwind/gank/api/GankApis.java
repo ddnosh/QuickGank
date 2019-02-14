@@ -1,6 +1,7 @@
 package com.androidwind.gank.api;
 
 import com.androidwind.gank.bean.model.FullGank;
+import com.androidwind.gank.bean.model.SearchGank;
 import com.androidwind.gank.bean.model.SimpleGank;
 import com.androidwind.gank.constant.Constants;
 
@@ -21,5 +22,9 @@ public interface GankApis {
     //for gank daily
     @GET("day/{year}/{month}/{day}")
     Observable<FullGank> getGankDaily(@Path("year") int year, @Path("month") int month, @Path("day") int day);
+
+    //for gank search
+    @GET("search/query/{search}/category/all/count/" + Constants.CATALOGUE_SIZE + "/page" + "/{page}")
+    Observable<SearchGank> getGankSearch(@Path("search") String search, @Path("page") int page);
 
 }

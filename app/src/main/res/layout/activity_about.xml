@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <la.xiong.androidquick.ui.view.CommonToolBar
+        android:id="@+id/common_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:background="@color/bar"/>
 
     <TextView
         android:id="@+id/tv_version"
@@ -13,8 +21,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Version:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/common_tool_bar"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_version_value"
@@ -44,4 +52,25 @@
         android:textColor="@color/button_selected"
         app:layout_constraintStart_toEndOf="@+id/tv_github"
         app:layout_constraintTop_toTopOf="@+id/tv_github" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Description:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_github" />
+
+    <TextView
+        android:id="@+id/tv_desc_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text=""
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toEndOf="@+id/tv_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_desc" />
 </android.support.constraint.ConstraintLayout>

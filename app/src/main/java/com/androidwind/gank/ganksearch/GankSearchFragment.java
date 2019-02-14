@@ -1,17 +1,20 @@
-package com.androidwind.gank.gankcatalogue;
+package com.androidwind.gank.ganksearch;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.androidwind.gank.R;
 import com.androidwind.gank.base.BaseTFragment;
-import com.androidwind.gank.bean.entity.GankBean;
-import com.androidwind.gank.bean.model.SimpleGank;
+import com.androidwind.gank.bean.entity.SearchBean;
+import com.androidwind.gank.bean.model.SearchGank;
 import com.androidwind.gank.constant.Constants;
-import com.androidwind.gank.tool.DateUtils;
 import com.androidwind.gank.webview.WebViewActivity;
 
 import java.util.ArrayList;
@@ -28,22 +31,24 @@ import static android.support.v7.widget.RecyclerView.SCROLL_STATE_SETTLING;
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
-public class GankItemFragment extends BaseTFragment<GankItemPresenter> implements GankItemContract.View{
+public class GankSearchFragment extends BaseTFragment<GankSearchPresenter> implements GankSearchContract.View {
 
-    public static final String TAG = "GankItemFragment";
+    public static final String TAG = "GankSearchFragment";
 
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout swipeRefreshLayout;
-    @BindView(R.id.rv_adapter)
+    @BindView(R.id.rv_search)
     RecyclerView mRecyclerView;
+    @BindView(R.id.ev_search)
+    EditText mEditTextSearch;
+
     private CommonAdapter mCommonAdapter;
-    private List<GankBean> mCatalogueList = new ArrayList();
+    private List<SearchBean> mSearchList = new ArrayList();
     private int page = 1;
 
-    public static GankItemFragment newInstance(String catalogue) {
+    public static GankSearchFragment newInstance() {
         Bundle args = new Bundle();
-        args.putString(Constants.GANK_TYPE, catalogue);
-        GankItemFragment fragment = new GankItemFragment();
+        GankSearchFragment fragment = new GankSearchFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,12 +60,11 @@ public class GankItemFragment extends BaseTFragment<GankItemPresenter> implement
 
     @Override
     protected void initViewsAndEvents(Bundle savedInstanceState) {
-        String catalogue = (String)getArguments().get(Constants.GANK_TYPE);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setHasFixedSize(true);
-        mCommonAdapter = new CommonAdapter<GankBean>(getActivity(), R.layout.item_gankdaily_content, mCatalogueList) {
+        mCommonAdapter = new CommonAdapter<SearchBean>(getActivity(), R.layout.item_gankdaily_content, mSearchList) {
             @Override
-            public void convert(CommonViewHolder holder, final GankBean bean) {
+            public void convert(CommonViewHolder holder, final SearchBean bean) {
                 holder.setText(R.id.tv_content, bean.desc);
                 holder.setOnClickListener(R.id.cl_daily, new View.OnClickListener() {
                     @Override
@@ -71,7 +75,7 @@ public class GankItemFragment extends BaseTFragment<GankItemPresenter> implement
                     }
                 });
                 holder.setText(R.id.tv_author, bean.who);
-                holder.setText(R.id.tv_time, DateUtils.toDateString2(bean.publishedAt));
+                holder.setText(R.id.tv_time, bean.publishedAt.split("T")[0]);
             }
         };
         mRecyclerView.setAdapter(mCommonAdapter);
@@ -80,34 +84,44 @@ public class GankItemFragment extends BaseTFragment<GankItemPresenter> implement
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mCatalogueList.clear();
+                mSearchList.clear();
                 page = 1;
-                mPresenter.initData(catalogue, page);
+                mPresenter.initData(mEditTextSearch.getText().toString().trim(), page);
             }
         });
-        mRecyclerView.addOnScrollListener(new onLoadMoreListener() {
+        mRecyclerView.addOnScrollListener(new GankSearchFragment.onLoadMoreListener() {
             @Override
             protected void onLoading(int countItem, int lastItem) {
                 showLoadingDialog();
-                mPresenter.initData(catalogue, ++page);
+                mPresenter.initData(mEditTextSearch.getText().toString().trim(), ++page);
             }
         });
 
-        showLoadingDialog();
-        mPresenter.initData(catalogue, page);
+        mEditTextSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    mSearchList.clear();
+                    page = 1;
+                    mPresenter.initData(mEditTextSearch.getText().toString().trim(), page);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
     protected int getContentViewLayoutID() {
-        return R.layout.fragment_item;
+        return R.layout.fragment_search;
     }
 
     @Override
-    public void showItemData(SimpleGank simpleGank) {
+    public void showSearchList(SearchGank search) {
         swipeRefreshLayout.setRefreshing(false);
         dismissLoadingDialog();
-        mCatalogueList.addAll(simpleGank.results);
-        mCommonAdapter.update(mCatalogueList);
+        mSearchList.addAll(search.results);
+        mCommonAdapter.update(mSearchList);
     }
 
     abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {

@@ -117,6 +117,5 @@ public class GankListFragment extends BaseTFragment<GankListPresenter> implement
         dismissLoadingDialog();
         mCatalogueList.addAll(girl.results);
         mCommonAdapter.update(mCatalogueList);
-        mCommonAdapter.notifyDataSetChanged();
     }
 }

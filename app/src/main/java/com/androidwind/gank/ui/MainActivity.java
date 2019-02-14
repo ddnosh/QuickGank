@@ -13,6 +13,7 @@ import com.androidwind.gank.base.BaseTFragment;
 import com.androidwind.gank.constant.Constants;
 import com.androidwind.gank.gankcatalogue.GankCatalogueFragment;
 import com.androidwind.gank.ganklist.GankListFragment;
+import com.androidwind.gank.ganksearch.GankSearchFragment;
 
 import java.util.List;
 
@@ -47,25 +48,30 @@ public class MainActivity extends BaseTActivity {
     }
 
     @Override
+    protected TransitionMode getOverridePendingTransitionMode() {
+        return TransitionMode.FADE;
+    }
+
+    @Override
     protected void initViewsAndEvents(Bundle savedInstanceState) {
         permissionsCheck();
 //        GankListFragment dailyFragment = findFragment(GankListFragment.class);
         if (savedInstanceState == null) {
             mFragments[0] = GankListFragment.newInstance();
             mFragments[1] = GankCatalogueFragment.newInstance();
-//            mFragments[2] = GankListFragment.newInstance();
+            mFragments[2] = GankSearchFragment.newInstance();
             getSupportDelegate().loadMultipleRootFragment(R.id.container, 0,
                     mFragments[0],
-                    mFragments[1]);
-//                    mFragments[2]);
+                    mFragments[1],
+                    mFragments[2]);
         } else {
             mFragments[0] = findFragment(GankListFragment.class);
             mFragments[1] = findFragment(GankCatalogueFragment.class);
-//            mFragments[2] = findFragment(GankListFragment.class);
+            mFragments[2] = findFragment(GankSearchFragment.class);
         }
         mBottomBar.addItem(new BottomBarTab(mContext, R.mipmap.ic_launcher, "日报"))
-                .addItem(new BottomBarTab(mContext, R.mipmap.ic_launcher, "目录"));
-//                .addItem(new BottomBarTab(mContext, R.mipmap.ic_launcher, "搜索"));
+                .addItem(new BottomBarTab(mContext, R.mipmap.ic_launcher, "目录"))
+                .addItem(new BottomBarTab(mContext, R.mipmap.ic_launcher, "搜索"));
         mBottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, int prePosition) {
@@ -82,7 +88,7 @@ public class MainActivity extends BaseTActivity {
 
             }
         });
-        mCommonToolBar.setOnTopBarClickListener(new CommonToolBar.OnToolBarClickListener(){
+        mCommonToolBar.setOnTopBarClickListener(new CommonToolBar.OnToolBarClickListener() {
 
             @Override
             public void onLeftClick() {
