@@ -5,7 +5,7 @@ import com.androidwind.gank.bean.entity.GankBean;
 
 import java.util.List;
 
-import la.xiong.androidquick.ui.base.BaseContract;
+import la.xiong.androidquick.ui.mvp.BaseContract;
 
 /**
  * @author ddnosh

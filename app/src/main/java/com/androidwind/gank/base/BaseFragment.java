@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.androidwind.gank.ui.FrameActivity;
 
+import la.xiong.androidquick.eventbus.EventCenter;
 import la.xiong.androidquick.ui.base.QuickFragment;
-import la.xiong.androidquick.ui.eventbus.EventCenter;
 
 /**
  * @author  ddnosh

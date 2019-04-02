@@ -10,7 +10,7 @@ import com.androidwind.gank.ui.AQActivityLifecycleCallbacks;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 
-import la.xiong.androidquick.network.retrofit.RetrofitManager;
+import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
 import la.xiong.androidquick.tool.SpUtil;
 import la.xiong.androidquick.tool.ToastUtil;
 import spa.lyh.cn.statusbarlightmode.ImmersionConfiguration;

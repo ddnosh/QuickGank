@@ -12,10 +12,10 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.BiFunction;
-import la.xiong.androidquick.network.retrofit.RetrofitManager;
-import la.xiong.androidquick.network.retrofit.exeception.ApiException;
+import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
+import la.xiong.androidquick.module.network.retrofit.exeception.ApiException;
+import la.xiong.androidquick.module.rxjava.BaseObserver;
 import la.xiong.androidquick.tool.LogUtil;
-import la.xiong.androidquick.ui.base.BaseObserver;
 
 /**
  * @author ddnosh

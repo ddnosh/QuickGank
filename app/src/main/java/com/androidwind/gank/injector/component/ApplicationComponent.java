@@ -8,7 +8,7 @@ import com.androidwind.gank.injector.module.ApplicationModule;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import la.xiong.androidquick.network.retrofit.RetrofitManager;
+import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
 
 /**
  * @author  ddnosh

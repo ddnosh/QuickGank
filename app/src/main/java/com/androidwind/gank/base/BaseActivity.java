@@ -6,9 +6,9 @@ import android.view.View;
 
 import com.androidwind.gank.ui.FrameActivity;
 
+import la.xiong.androidquick.eventbus.EventCenter;
 import la.xiong.androidquick.tool.LogUtil;
 import la.xiong.androidquick.ui.base.QuickActivity;
-import la.xiong.androidquick.ui.eventbus.EventCenter;
 
 /**
  * @Description: 第一种类型的BaseActivity
