@@ -61,7 +61,7 @@ public class GankListFragment extends BaseTFragment<GankListPresenter> implement
             @Override
             public void convert(CommonViewHolder holder, final GankBean bean) {
 //                holder.setImageResourceWithGlide(R.id.iv_girl, bean.url);
-                GlideUtils.loadImageView(mContext, bean.url, holder.getView(R.id.iv_girl));
+                GlideUtils.loadImageView(bean.url, holder.getView(R.id.iv_girl));
                 holder.setText(R.id.tv_date, DateUtils.toDateString2(bean.publishedAt));
                 holder.setOnClickListener(R.id.cl_item, v -> {
                     Calendar calendar = Calendar.getInstance();

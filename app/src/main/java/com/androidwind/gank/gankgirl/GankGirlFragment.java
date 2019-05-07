@@ -29,7 +29,6 @@ public class GankGirlFragment extends BaseTFragment {
         showLoadingDialog();
         mBundle = getActivity().getIntent().getExtras();
         String url = mBundle.getString(Constants.GANK_URL);
-//        GlideUtils.loadImageView(mContext, url, mImageViewGirl);
         Glide.with(mContext)
                 .load(url)
                 .into(new SimpleTarget<GlideDrawable>() {

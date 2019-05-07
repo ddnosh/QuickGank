@@ -22,6 +22,16 @@ public abstract class BaseActivity extends QuickActivity {
     protected static String TAG = "BaseActivity";
 
     @Override
+    protected void initCreate() {
+
+    }
+
+    @Override
+    protected void initDestroy() {
+
+    }
+
+    @Override
     protected void getBundleExtras(Bundle extras) {
     }
 

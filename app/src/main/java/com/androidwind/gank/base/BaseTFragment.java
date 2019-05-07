@@ -37,6 +37,16 @@ public abstract class BaseTFragment<T extends BasePresenter> extends BaseFFragme
         super.onDestroy();
     }
 
+    @Override
+    protected void initCreate() {
+
+    }
+
+    @Override
+    protected void initDestroy() {
+
+    }
+
     protected void initInjector() {
 
     }

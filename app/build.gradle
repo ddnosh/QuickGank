@@ -48,7 +48,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'la.xiong.androidquick:AndroidQuick:1.2.0'
+    compile 'la.xiong.androidquick:AndroidQuick:1.2.4'
 
     //butterknife
     annotationProcessor "com.jakewharton:butterknife-compiler:8.6.0"
