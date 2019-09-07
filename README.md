@@ -17,4 +17,5 @@
 - [PhotoView](https://github.com/chrisbanes/PhotoView)
 - [SmartTabLayout](https://github.com/ogaclejapan/SmartTabLayout)
 - [fastjson](https://github.com/alibaba/fastjson)
+- [Dagger2](https://google.github.io/dagger)
 
