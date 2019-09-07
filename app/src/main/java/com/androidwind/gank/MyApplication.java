@@ -2,6 +2,9 @@ package com.androidwind.gank;
 
 import android.app.Activity;
 
+import com.androidwind.androidquick.module.retrofit.RetrofitManager;
+import com.androidwind.androidquick.util.SpUtil;
+import com.androidwind.androidquick.util.ToastUtil;
 import com.androidwind.gank.crash.CrashHandler;
 import com.androidwind.gank.injector.component.ApplicationComponent;
 import com.androidwind.gank.injector.component.DaggerApplicationComponent;
@@ -9,10 +12,6 @@ import com.androidwind.gank.injector.module.ApplicationModule;
 import com.androidwind.gank.ui.AQActivityLifecycleCallbacks;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
-
-import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
-import la.xiong.androidquick.tool.SpUtil;
-import la.xiong.androidquick.tool.ToastUtil;
 
 /**
  * @author  ddnosh
@@ -44,8 +43,6 @@ public class MyApplication extends android.support.multidex.MultiDexApplication 
         ToastUtil.register(this);
         //init SpUtil
         SpUtil.init(this);
-        //init retrofit url
-        RetrofitManager.initBaseUrl("http://gank.io/api/");
         //init stetho
         Stetho.initializeWithDefaults(this);
         //init crashhandler

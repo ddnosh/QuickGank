@@ -15,7 +15,7 @@ import com.androidwind.gank.base.BaseActivity;
 import com.androidwind.gank.constant.Constants;
 
 import butterknife.BindView;
-import la.xiong.androidquick.tool.StringUtil;
+import com.androidwind.androidquick.util.StringUtil;
 
 /**
  * @author ddnosh

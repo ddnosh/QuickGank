@@ -2,13 +2,13 @@ package com.androidwind.gank.injector.module;
 
 import android.content.Context;
 
+import com.androidwind.androidquick.module.retrofit.RetrofitManager;
 import com.androidwind.gank.MyApplication;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
 
 /**
  * @author  ddnosh
@@ -31,6 +31,8 @@ public class ApplicationModule {
     @Provides
     @Singleton
     RetrofitManager provideRetrofitManager() {
-        return new RetrofitManager();
+        RetrofitManager retrofitManager = new RetrofitManager();
+        retrofitManager.initBaseUrl("http://gank.io/api/");
+        return retrofitManager;
     }
 }

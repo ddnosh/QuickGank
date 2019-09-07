@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.androidwind.androidquick.eventbus.EventCenter;
+import com.androidwind.androidquick.ui.base.QuickActivity;
+import com.androidwind.androidquick.util.LogUtil;
 import com.androidwind.gank.ui.FrameActivity;
 
-import la.xiong.androidquick.eventbus.EventCenter;
-import la.xiong.androidquick.tool.LogUtil;
-import la.xiong.androidquick.ui.base.QuickActivity;
 
 /**
  * @Description: 第一种类型的BaseActivity
@@ -22,21 +22,11 @@ public abstract class BaseActivity extends QuickActivity {
     protected static String TAG = "BaseActivity";
 
     @Override
-    protected void initCreate() {
-
-    }
-
-    @Override
-    protected void initDestroy() {
-
-    }
-
-    @Override
     protected void getBundleExtras(Bundle extras) {
     }
 
     @Override
-    protected View getLoadingTargetView() {
+    protected View setDefaultVaryViewRoot() {
         return null;
     }
 
@@ -53,11 +43,6 @@ public abstract class BaseActivity extends QuickActivity {
     @Override
     protected TransitionMode getOverridePendingTransitionMode() {
         return TransitionMode.LEFT;
-    }
-
-    @Override
-    protected boolean isApplySystemBarTint() {
-        return true;
     }
 
     @Override

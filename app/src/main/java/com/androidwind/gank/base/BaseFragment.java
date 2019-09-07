@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.androidwind.gank.ui.FrameActivity;
 
-import la.xiong.androidquick.eventbus.EventCenter;
-import la.xiong.androidquick.ui.base.QuickFragment;
+import com.androidwind.androidquick.eventbus.EventCenter;
+import com.androidwind.androidquick.ui.base.QuickFragment;
 
 /**
  * @author  ddnosh
@@ -37,7 +37,7 @@ public abstract class BaseFragment extends QuickFragment {
     }
 
     @Override
-    protected View getLoadingTargetView() {
+    protected View setDefaultVaryViewRoot() {
         return null;
     }
 

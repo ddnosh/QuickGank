@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import la.xiong.androidquick.ui.adapter.CommonAdapter;
-import la.xiong.androidquick.ui.adapter.CommonViewHolder;
+import com.androidwind.androidquick.ui.adapter.CommonAdapter;
+import com.androidwind.androidquick.ui.adapter.CommonViewHolder;
 
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_DRAGGING;
 import static android.support.v7.widget.RecyclerView.SCROLL_STATE_SETTLING;

@@ -18,7 +18,7 @@ import com.androidwind.gank.webview.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import la.xiong.androidquick.tool.AppUtil;
+import com.androidwind.androidquick.util.AppUtil;
 
 /**
  * @author ddnosh
@@ -59,7 +59,7 @@ public class GankAboutActivity extends BaseTActivity {
 
     private SpannableString getString() {
         final SpannableString spannableString = new SpannableString(
-                "一个基于AndroidQuick快速开发框架的Gank.io客户端");
+                "一个基于AndroidQuick快速开发库的Gank.io客户端");
         spannableString.setSpan(new ForegroundColorSpan(Color.RED),
                 4, 16,
                 Spannable.SPAN_INCLUSIVE_EXCLUSIVE);

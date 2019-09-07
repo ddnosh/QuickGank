@@ -3,7 +3,7 @@ package com.androidwind.gank.gankcatalogue;
 import com.androidwind.gank.base.BaseModel;
 import com.androidwind.gank.bean.model.SimpleGank;
 
-import la.xiong.androidquick.ui.mvp.BaseContract;
+import com.androidwind.androidquick.ui.mvp.BaseContract;
 
 /**
  * @author ddnosh

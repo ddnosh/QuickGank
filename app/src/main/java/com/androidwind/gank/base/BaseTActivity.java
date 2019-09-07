@@ -9,7 +9,7 @@ import com.androidwind.gank.injector.module.ActivityModule;
 
 import javax.inject.Inject;
 
-import la.xiong.androidquick.tool.LogUtil;
+import com.androidwind.androidquick.util.LogUtil;
 
 /**
  * @Description: 第二种类型的BaseActivity

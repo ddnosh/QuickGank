@@ -2,7 +2,8 @@ package com.androidwind.gank.gankcatalogue;
 
 import android.content.Context;
 
-import com.androidwind.gank.MyApplication;
+import com.androidwind.androidquick.module.retrofit.RetrofitManager;
+import com.androidwind.androidquick.module.retrofit.exeception.ApiException;
 import com.androidwind.gank.api.GankApis;
 import com.androidwind.gank.base.BasePresenter;
 import com.androidwind.gank.bean.model.SimpleGank;
@@ -10,10 +11,8 @@ import com.androidwind.gank.tool.RxUtils;
 
 import javax.inject.Inject;
 
-import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
-import la.xiong.androidquick.module.network.retrofit.exeception.ApiException;
-import la.xiong.androidquick.module.rxjava.BaseObserver;
-import la.xiong.androidquick.tool.LogUtil;
+import com.androidwind.androidquick.module.rxjava.BaseObserver;
+import com.androidwind.androidquick.util.LogUtil;
 
 /**
  * @author ddnosh
@@ -34,7 +33,7 @@ public class GankItemPresenter extends BasePresenter<GankItemContract.View> impl
 
     @Override
     public void initData(String catalogue, int page) {
-        GankApis gankDaysApis = mRetrofitManager.createApi(MyApplication.getInstance().getApplicationContext(), GankApis.class);
+        GankApis gankDaysApis = mRetrofitManager.createApi(GankApis.class);
         gankDaysApis.getGankList(catalogue, page)
                 .compose(RxUtils.applySchedulers())
                 .compose(getView().bindToLife())

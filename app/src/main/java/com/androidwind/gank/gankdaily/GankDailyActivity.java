@@ -18,9 +18,9 @@ import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
-import la.xiong.androidquick.ui.adapter.CommonViewHolder;
-import la.xiong.androidquick.ui.adapter.MultiItemCommonAdapter;
-import la.xiong.androidquick.ui.adapter.MultiItemTypeSupport;
+import com.androidwind.androidquick.ui.adapter.CommonViewHolder;
+import com.androidwind.androidquick.ui.adapter.MultiItemCommonAdapter;
+import com.androidwind.androidquick.ui.adapter.MultiItemTypeSupport;
 
 /**
  * @author ddnosh

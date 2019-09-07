@@ -5,7 +5,7 @@ import com.androidwind.gank.constant.Constants;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
-import la.xiong.androidquick.ui.mvp.BaseContract;
+import com.androidwind.androidquick.ui.mvp.BaseContract;
 
 /**
  * @author ddnosh

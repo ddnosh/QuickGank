@@ -2,6 +2,8 @@ package com.androidwind.gank.ganklist;
 
 import android.content.Context;
 
+import com.androidwind.androidquick.module.retrofit.RetrofitManager;
+import com.androidwind.androidquick.module.retrofit.exeception.ApiException;
 import com.androidwind.gank.MyApplication;
 import com.androidwind.gank.api.GankApis;
 import com.androidwind.gank.base.BasePresenter;
@@ -12,10 +14,8 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.BiFunction;
-import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
-import la.xiong.androidquick.module.network.retrofit.exeception.ApiException;
-import la.xiong.androidquick.module.rxjava.BaseObserver;
-import la.xiong.androidquick.tool.LogUtil;
+import com.androidwind.androidquick.module.rxjava.BaseObserver;
+import com.androidwind.androidquick.util.LogUtil;
 
 /**
  * @author ddnosh
@@ -36,7 +36,7 @@ public class GankListPresenter extends BasePresenter<GankListContract.View> impl
 
     @Override
     public void initData(int page) {
-        GankApis gankDaysApis = mRetrofitManager.createApi(MyApplication.getInstance().getApplicationContext(), GankApis.class);
+        GankApis gankDaysApis = mRetrofitManager.createApi(GankApis.class);
 
         Observable.zip(gankDaysApis.getGankList("福利", page),
                 gankDaysApis.getGankList("休息视频", page),

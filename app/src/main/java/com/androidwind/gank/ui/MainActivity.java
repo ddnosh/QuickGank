@@ -18,14 +18,14 @@ import com.androidwind.gank.ganksearch.GankSearchFragment;
 import java.util.List;
 
 import butterknife.BindView;
-import la.xiong.androidquick.tool.LogUtil;
-import la.xiong.androidquick.tool.ToastUtil;
-import la.xiong.androidquick.ui.base.QuickActivity;
-import la.xiong.androidquick.ui.dialog.dialogactivity.CommonDialog;
-import la.xiong.androidquick.ui.permission.EasyPermissions;
-import la.xiong.androidquick.ui.view.BottomBar;
-import la.xiong.androidquick.ui.view.BottomBarTab;
-import la.xiong.androidquick.ui.view.CommonToolBar;
+import com.androidwind.androidquick.util.LogUtil;
+import com.androidwind.androidquick.util.ToastUtil;
+import com.androidwind.androidquick.ui.base.QuickActivity;
+import com.androidwind.androidquick.ui.dialog.dialogactivity.CommonDialog;
+import com.androidwind.androidquick.ui.permission.EasyPermissions;
+import com.androidwind.androidquick.ui.view.BottomBar;
+import com.androidwind.androidquick.ui.view.BottomBarTab;
+import com.androidwind.androidquick.ui.view.CommonToolBar;
 
 public class MainActivity extends BaseTActivity {
 

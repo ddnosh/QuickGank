@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <la.xiong.androidquick.ui.view.CommonToolBar
+    <com.androidwind.androidquick.ui.view.CommonToolBar
         android:id="@+id/common_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/common_tool_bar" />
 
-    <la.xiong.androidquick.ui.view.BottomBar
+    <com.androidwind.androidquick.ui.view.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

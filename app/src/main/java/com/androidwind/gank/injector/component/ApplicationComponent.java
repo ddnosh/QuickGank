@@ -2,13 +2,13 @@ package com.androidwind.gank.injector.component;
 
 import android.content.Context;
 
+import com.androidwind.androidquick.module.retrofit.RetrofitManager;
 import com.androidwind.gank.MyApplication;
 import com.androidwind.gank.injector.module.ApplicationModule;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
-import la.xiong.androidquick.module.network.retrofit.RetrofitManager;
 
 /**
  * @author  ddnosh

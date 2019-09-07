@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import java.util.Stack;
 
-import la.xiong.androidquick.tool.LogUtil;
+import com.androidwind.androidquick.util.LogUtil;
 
 /**
  * @author ddnosh

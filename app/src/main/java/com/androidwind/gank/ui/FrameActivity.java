@@ -5,9 +5,9 @@ import android.os.Bundle;
 import com.androidwind.gank.R;
 import com.androidwind.gank.base.BaseTActivity;
 
-import la.xiong.androidquick.tool.LogUtil;
-import la.xiong.androidquick.tool.ReflectUtil;
-import la.xiong.androidquick.ui.base.QuickFragment;
+import com.androidwind.androidquick.util.LogUtil;
+import com.androidwind.androidquick.util.ReflectUtil;
+import com.androidwind.androidquick.ui.base.QuickFragment;
 
 /**
  * @author  ddnosh
