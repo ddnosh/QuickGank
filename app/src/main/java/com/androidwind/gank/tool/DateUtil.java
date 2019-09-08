@@ -7,7 +7,7 @@ import java.util.Date;
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
-public class DateUtils {
+public class DateUtil {
 
     public static StringBuilder toDateString1(Date date) {
         Calendar calendar = Calendar.getInstance();

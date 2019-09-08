@@ -31,8 +31,6 @@ public class ApplicationModule {
     @Provides
     @Singleton
     RetrofitManager provideRetrofitManager() {
-        RetrofitManager retrofitManager = new RetrofitManager();
-        retrofitManager.initBaseUrl("http://gank.io/api/");
-        return retrofitManager;
+        return new RetrofitManager("http://gank.io/api/");
     }
 }

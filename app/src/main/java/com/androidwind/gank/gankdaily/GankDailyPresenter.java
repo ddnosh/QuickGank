@@ -4,13 +4,12 @@ import android.content.Context;
 
 import com.androidwind.androidquick.module.retrofit.RetrofitManager;
 import com.androidwind.androidquick.module.retrofit.exeception.ApiException;
-import com.androidwind.gank.MyApplication;
 import com.androidwind.gank.api.GankApis;
 import com.androidwind.gank.base.BasePresenter;
 import com.androidwind.gank.bean.entity.GankBean;
 import com.androidwind.gank.bean.model.FullGank;
 import com.androidwind.gank.constant.Constants;
-import com.androidwind.gank.tool.RxUtils;
+import com.androidwind.gank.tool.RxUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +40,7 @@ public class GankDailyPresenter extends BasePresenter<GankDailyContract.View> im
     public void getDaily(int year, int month, int day) {
         GankApis gankDaysApis = mRetrofitManager.createApi(GankApis.class);
         gankDaysApis.getGankDaily(year, month, day)
-                .compose(RxUtils.applySchedulers())
+                .compose(RxUtil.applySchedulers())
                 .compose(getView().bindToLife())
                 .subscribe(new BaseObserver<FullGank>() {
                     @Override

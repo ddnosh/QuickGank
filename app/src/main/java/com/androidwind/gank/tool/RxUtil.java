@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Schedulers;
  * @author ddnosh
  * @website http://blog.csdn.net/ddnosh
  */
-public class RxUtils {
+public class RxUtil {
 
     static final ObservableTransformer schedulersTransformer = upstream -> (upstream).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread());

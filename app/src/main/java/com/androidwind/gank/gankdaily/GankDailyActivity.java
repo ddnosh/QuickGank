@@ -10,7 +10,7 @@ import com.androidwind.gank.R;
 import com.androidwind.gank.base.BaseTActivity;
 import com.androidwind.gank.bean.entity.GankBean;
 import com.androidwind.gank.constant.Constants;
-import com.androidwind.gank.tool.DateUtils;
+import com.androidwind.gank.tool.DateUtil;
 import com.androidwind.gank.webview.WebViewActivity;
 
 import java.util.ArrayList;
@@ -107,7 +107,7 @@ public class GankDailyActivity extends BaseTActivity<GankDailyPresenter> impleme
                     }
                 });
                 holder.setText(R.id.tv_author, bean.who);
-                holder.setText(R.id.tv_time, DateUtils.toDateString2(bean.publishedAt));
+                holder.setText(R.id.tv_time, DateUtil.toDateString2(bean.publishedAt));
             }
         }
     }

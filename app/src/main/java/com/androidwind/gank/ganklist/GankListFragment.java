@@ -12,7 +12,7 @@ import com.androidwind.gank.bean.model.SimpleGank;
 import com.androidwind.gank.constant.Constants;
 import com.androidwind.gank.gankdaily.GankDailyActivity;
 import com.androidwind.gank.gankgirl.GankGirlFragment;
-import com.androidwind.gank.tool.DateUtils;
+import com.androidwind.gank.tool.DateUtil;
 import com.androidwind.gank.webview.WebViewActivity;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -62,7 +62,7 @@ public class GankListFragment extends BaseTFragment<GankListPresenter> implement
             public void convert(CommonViewHolder holder, final GankBean bean) {
 //                holder.setImageResourceWithGlide(R.id.iv_girl, bean.url);
                 GlideManager.loadNet(bean.url, holder.getView(R.id.iv_girl));
-                holder.setText(R.id.tv_date, DateUtils.toDateString2(bean.publishedAt));
+                holder.setText(R.id.tv_date, DateUtil.toDateString2(bean.publishedAt));
                 holder.setOnClickListener(R.id.cl_item, v -> {
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTime(bean.publishedAt);

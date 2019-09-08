@@ -4,11 +4,10 @@ import android.content.Context;
 
 import com.androidwind.androidquick.module.retrofit.RetrofitManager;
 import com.androidwind.androidquick.module.retrofit.exeception.ApiException;
-import com.androidwind.gank.MyApplication;
 import com.androidwind.gank.api.GankApis;
 import com.androidwind.gank.base.BasePresenter;
 import com.androidwind.gank.bean.model.SimpleGank;
-import com.androidwind.gank.tool.RxUtils;
+import com.androidwind.gank.tool.RxUtil;
 
 import javax.inject.Inject;
 
@@ -46,7 +45,7 @@ public class GankListPresenter extends BasePresenter<GankListContract.View> impl
                         return composeWithGirlAndRest(girl, rest);
                     }
                 })
-                .compose(RxUtils.applySchedulers())
+                .compose(RxUtil.applySchedulers())
                 .compose(getView().bindToLife())
                 .subscribe(new BaseObserver<SimpleGank>() {
                     @Override
