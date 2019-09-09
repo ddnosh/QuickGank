@@ -59,10 +59,12 @@ public class GankDailyActivity extends BaseTActivity<GankDailyPresenter> impleme
 
         Calendar calendar = (Calendar) mBundle.getSerializable(Constants.GANK_DATE);
         mPresenter.getDaily(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+        showLoadingDialog();
     }
 
     @Override
     public void showDailyList(List<GankBean> beans) {
+        dismissLoadingDialog();
         gankBeanList.addAll(beans);
         mDailyAdapter.notifyDataSetChanged();
     }
