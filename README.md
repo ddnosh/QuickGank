@@ -9,7 +9,7 @@
 
 # 开源库
 - [AndroidQuick](https://github.com/ddnosh/AndroidQuick)
-- [Butter Knife](https://github.com/JakeWharton/butterknife)
+- [ButterKnife](https://github.com/JakeWharton/butterknife)
 - [Dagger2](https://google.github.io/dagger)
 - [Glide](https://github.com/bumptech/glide)
 - [RxJava](https://github.com/ReactiveX/RxJava)
@@ -19,4 +19,5 @@
 - [SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)
 - [PhotoView](https://github.com/chrisbanes/PhotoView)
 - [SmartTabLayout](https://github.com/ogaclejapan/SmartTabLayout)
+- [gson](https://github.com/google/gson)
 - [fastjson](https://github.com/alibaba/fastjson)
