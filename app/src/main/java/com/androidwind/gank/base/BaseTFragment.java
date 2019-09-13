@@ -2,6 +2,7 @@ package com.androidwind.gank.base;
 
 import android.os.Bundle;
 
+import com.androidwind.androidquick.ui.mvp.BasePresenter;
 import com.androidwind.gank.MyApplication;
 import com.androidwind.gank.injector.component.DaggerFragmentComponent;
 import com.androidwind.gank.injector.component.FragmentComponent;

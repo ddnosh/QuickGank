@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.androidwind.androidquick.module.retrofit.RetrofitManager;
 import com.androidwind.androidquick.module.retrofit.exeception.ApiException;
+import com.androidwind.androidquick.ui.mvp.BasePresenter;
 import com.androidwind.gank.api.GankApis;
-import com.androidwind.gank.base.BasePresenter;
 import com.androidwind.gank.bean.model.SimpleGank;
 import com.androidwind.gank.tool.RxUtil;
 
