@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.androidwind:androidquick:2.0.2'
 
     //butterknife
-    annotationProcessor "com.jakewharton:butterknife-compiler:8.6.0"
+    annotationProcessor "com.jakewharton:butterknife-compiler:9.0.0"
     //dagger2
     implementation 'com.google.dagger:dagger:2.7'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
